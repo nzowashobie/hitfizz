@@ -1,0 +1,89 @@
+
+
+{% load static %}
+{% load hitcount_tags %}
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelementplayer.min.css" rel="stylesheet"/>
+  <link href="{% static '/css/style1.css' %}" rel="stylesheet"/>
+  <style>
+    
+    body {
+        background-color: black;
+        }
+        .display{
+          background-color: red;
+        }
+      .container1 {
+      margin-top: 2px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  .gallery{
+  margin: 110px;
+  border:none;
+  margin-right:2px;
+  width: 540px;
+  height: 200px;
+}  
+g.gallery h3{
+  color: white;
+}   
+        </style>
+ </head>
+ <body>
+  <!-- partial:index.partial.html -->
+  <html>
+   <head>
+    <meta charset="utf-8"/>
+    <title>
+     
+    </title>
+   </head>
+   <body>
+    <div class="contain">
+     <div class="container1">
+      {% load hitcount_tags %}
+      <div class="gallery">
+
+      <h3>{{post.title}}</h3>
+      <br/>
+      <a href="{{post.audio.url}}" download=""><button class ="btn btn-danger" type ="button" name="button">Confirm Download</button></a>
+      <ul>
+            <p class="lead">{{post.description}}</p>
+            <p style="color:white;font-size: 12px;">Published: {{post.published}}</p>
+            <p style="color: blue;">downloads: {% get_hit_count for post %}</p>
+      </ul>
+      </div>
+      <hr>
+      
+        <h3>Popular Songs</h3>
+        {% for p in popular_posts %}
+        <p style="color: white;">{{p.title}}</p>
+      
+        {% endfor %}
+
+      
+      <br/>
+      </body>
+  <!-- partial -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.7/mediaelement-and-player.min.js">
+  </script>
+  <script src="{% static '.js/script.js' %}">
+  </script>
+ </body>
+</html>

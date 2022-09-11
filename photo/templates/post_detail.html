@@ -1,0 +1,325 @@
+{% load hitcount_tags %}
+{% load social_share %}
+{% load comments %}
+{% load comments_xtd %}
+<!DOCTYPE html>
+<html lang ='eng'>
+<head>
+    {% load static %}
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+ type ="text/css" 
+ href ="base.css"> 
+</head>
+<title> hitfizz | Home </title> 
+
+  <style>
+
+    /* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: palevioletred;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+       *{
+           box-sizing: border-box;
+
+       }
+       body {
+        /*background-image: url("{% static '/images/blog.jpg' %}" );*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+       
+        }  
+        h4{color:white;
+            margin-left:auto;
+            text-align: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+    }
+    .lead{
+      font-size: 14px;
+    }
+    h3{color:red;
+        margin-left: 5%;
+        font-style:italic;
+        font-weight: 200;
+    } 
+       nav{
+           background-color:ghostwhite;
+           width:100%;
+           overflow: auto;
+       }
+    
+ ul{
+            margin: 0;
+            padding:0;
+            list-style:none;
+
+        }   
+ li{
+     float: left;
+ }
+.container1 {
+    max-width: 900px;
+    padding-top: 80px;
+    margin:auto;
+    overflow: auto;
+}
+.snav {
+  height: 10%;
+  width: 1000px;
+}
+
+.gallery{
+    margin:5px;
+    border: 1px;
+    margin-left: auto;
+    width:fit-content;
+    height:fit-content; 
+    
+}  
+.lightbox{
+   display:block;
+   width:100px;
+   border: 5px solid rgba(255,0,0, 0.3) ;
+} 
+.lightbox img{
+    display:block;
+    width:100px;
+    margin:-5px;
+    position:relative;
+    z-index:-1;
+}
+.gallery a{color: white;
+    font-size:11px;}
+.desc{
+    padding: 15px;
+    text-align: center;
+}   
+
+nav a{
+     width: 90px;
+     display: block;
+     text-decoration: none;
+     text-align: center;
+     font-size: 11px;
+     color: black;
+     padding: 20px 10px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+nav a:hover{
+         background-color: blue;
+         color:white;
+}
+.navgr .container{
+    width: 100%;}
+
+.navgrd nav{background-color: green;
+    width: 30%;
+    height: 90%;
+    float: right;}
+.sidenav a:hover {
+    color:black;
+}
+.navgr image{width: 120%;
+    height: 60%;}
+
+.sidenav {padding-top: 15px;
+    background-color: white;}
+.sidenav a {font-size: 18px;}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  background-color: tomato;
+}
+.sidenav2 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  background-color:gray;
+}
+.jumbotron{padding-top: 20;
+    padding-bottom: 50;
+    background-color: red;
+    color: white;
+}
+.jumbotron
+{   
+    padding-top: 0px;
+    padding-bottom:0px;
+    width: 100;
+
+    background-size: cover;
+    height:50px;
+}
+.snav nav{background-color: rgb(226, 23, 121);
+
+  border-color: cornflowerblue;
+  width: 50%;
+
+  text-align: center;
+  margin-left: 500px;
+
+}
+.snav img{
+    width: 100%;
+    height:20%;
+}
+.snav1{margin-left: 55%;
+    color: blue;}
+
+footer#page_footer{
+    clear: both;
+    width: 100%;
+    display: block;
+    text-align: center;
+
+}
+#bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+   
+}
+
+These
+body{background-color: rgb(108, 172, 23);}
+tr:nth-child(even)
+{background-color: blueviolet;}
+#third{
+     background: url("/static/ninja/miss-world.jpg") 500% 0 no-repeat fixed;
+     color: white;
+     height: 1500px;
+     padding: 100px 0 0 0;  
+    
+     }
+
+</style>
+<div class="navbar">
+    <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a class="/" href="{% url 'posts' %}"><i class="fa fa-cart-arrow-down"></i> Blog today</a>
+    <a href="{% url 'downld' %}"><i class="fa fa-fw fa-music"></i> Music</a>
+  </div>
+  <div class="navbar">
+    <a href="{% url 'Biography' %}"><i class="fa fa-diamond"></i> Photo gallery</a>
+  </div>
+<div class="jumbotron">
+    {% load static %}
+    <h5><img src="{% static 'images/miss-world1.jpg' %}" width="50" height="50"> MORE STORIES IN DETAILS</h5>
+</div>
+</head>
+ 
+<div class="container-fluid">
+    <div class="container1">
+      <div class="gallery">
+
+<h3>{{post.title}}</h3>
+<ul>
+      <p class="lead">{{post.description | safe}}</p>
+      <p>Published: {{post.published}}</p>
+      <!--<a href="hitfizz"><button class ="btn btn-danger" type ="button" name="button">download mp3</button></a>-->
+      <p>Views: {% get_hit_count for post %}</p>
+</ul>
+<!--<h3>Popular Posts</h3>
+{% for p in popular_posts %}
+<p>{{p.title}}</p>
+{% endfor %}-->
+<br/>
+<!--comment section-->
+<!-- nav bar -->
+<div class ="display">
+  <h4 style="color:black;">{{ comments.count }} comments</h4>
+      </div>
+  {% for comment in comments %}
+  
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            <h4 style="color:#000;">{{comment.name }}</h4>
+          
+          
+          {{ comment.body | safe}}
+            <span class=" text-muted font-weight-normal">
+              
+              <h6 style="color: black;">{{ comment.created_on }}</h6>
+            </span>
+          </p>
+          <hr/>
+        </div>
+        {% endfor %}
+    </hr>
+  <div class="card-body">
+        {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+          Your comment is awaiting moderation
+        </div>
+        {% else %}
+        <h3>Leave a comment</h3>
+        {% load crispy_forms_tags %}
+        <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+        {% endif %}
+  </div>
+  
+<!-- For Comments - This code will show the NUMBER OF COMMENTS POSTED.  -->
+  
+
+
+
+</body>
+
+<footer id="page_footer">
+  <p>&copy; 2022 Shobie's World</p>
+  
+  </footer>
+
+</html> 
+
+  

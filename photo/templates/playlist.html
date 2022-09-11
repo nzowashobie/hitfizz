@@ -1,0 +1,286 @@
+{% load static %}
+{% load social_share %}
+<!DOCTYPE html>
+<html lang ='eng'>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<title> my diary</title> 
+   <style>
+
+*{
+           box-sizing: border-box;
+
+       }
+    body {
+        background-image: url("{% static '/images/music2.gif' %}" );
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+    }
+
+    body{
+        background-color: black;
+    }  
+    
+    
+    
+       nav{
+           background-color:gold;
+           width:100%;
+           overflow: auto;
+       }
+
+       .fa{
+        width: 200px;
+       }
+ ul{
+            margin: 0;
+            padding:0;
+            list-style:none;
+        }   
+ li{
+     float: left;
+ }   
+ul{
+    float:inline-start;
+    margin: 50px;
+}
+ nav a{
+     width: 120px;
+     display: block;
+     text-decoration: none;
+     text-align: center;
+  
+     font-size: 17px;
+     color: black;
+     padding: 20px 10px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+nav a:hover{
+         background-color: blue;
+         color:white;
+     }  
+.player {
+    width: 100%;
+    display: block;
+    float: auto;
+    position: relative;
+}
+.container {
+    max-width: 700px;
+    margin: auto;
+    
+    overflow: auto;
+}
+.container h3{
+    color: white;
+}
+.topnav{
+ background-color:#333;
+ overflow:hidden;
+ position: fixed; /* Set the navbar to fixed position */
+ top: 0; /* Position the navbar at the top of the page */
+ width:100%;
+ }
+
+.topnav a{
+ float:left;
+ color:#f2f2f2;
+ text-align:center;
+ padding:14px 16px;
+ text-decoration:none;
+ font-size:12px;
+}
+ .topnav a:hover{
+     background-color:#ddd;
+     color:black;
+ }
+
+.topnav a.active{
+    background-color:gray;
+    color:white; }
+
+/* Add a black background color to the top navigation */
+.topnav2 {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav2 a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+
+}
+
+/* Change the color of links on hover */
+.topnav2 a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav2 a.active2 {
+  background-color: #04AA6D;
+
+  color: white;
+}
+.jumbotron{
+    padding-top: 60px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+}
+.tray a{
+color:white;
+}
+.gallery{
+    margin: 5px;
+    border: 1px solid burlywood;
+    float:inline-start;
+    width: 300px;
+}    
+.gallery img{
+    width: 100%;
+    height: 100%;
+    
+ 
+}
+     footer#page_footer{
+clear: both;
+width: 100%;
+display: block;
+text-align: center;
+}
+These
+body{background-color: rgb(108, 172, 23);}
+tr:nth-child(even)
+{background-color: blueviolet;}
+
+</style>
+<div class="topnav">
+    <a class= "active" href = "/">Home</a>
+    
+</div>
+
+<div class="jumbotron">
+     Shobie's world
+</div>
+</head>
+<body>
+    <div class="container">
+<ul>
+{% if item != None %}
+ 
+{% else %}
+<title>invalid item</title>>
+{% endif %}
+<div class="tray">
+<!--<a href="{% url 'album' %}"><button class ="btn btn-success" type ="button" name="button"><a href="{%url 'album' %}">&lt;back</button></a>-->
+</div>
+{% if item != None %}
+    <h2>{{item.albums.album}}</h2>
+    <img src="{{item.art.url}}" width="290">
+    <h4 style="color:white;">{{item.Title}}</h4>
+    <h2>{{Title}}</h2>
+    <audio id="player">
+        <source src="{{item.Songs.url}}" type="audio/mp3"></audio>
+      <div> 
+        <button type ="submit" style="height: 50px; width:100px; background-color:green; font-size: 20px; color: white;" onclick="document.getElementById('player').play()" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+          </svg></button> 
+          <button type ="btn btn-primary" style="height: 50px; width:100px; background-color:red; font-size: 20px; color: white;" o onclick="document.getElementById('player').pause()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pause-btn" viewBox="0 0 16 16">
+          <path d="M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"/>
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+        </svg></button> 
+        <!--<button onclick="document.getElementById('player').volume += 0.1">Vol +</button> 
+        <button onclick="document.getElementById('player').volume -= 0.1">Vol -</button> -->
+        <a href="{{item.Songs.url}}"{{item.art.url}} download><button class ="btn btn-danger" type ="button" name="button">download</button></a>
+      </div>
+     </div>
+     <a href="https://api.whatsapp.com/send?text=Listen to this song by {{item.artist}} at: http://hitfizz.herokuapp.com/album/{{item.id}}"class="float" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+      </a>
+
+          <div class="social-btn">
+       <a href="" target="_blank"><div class="social face"><i class="fa fa-facebook fa-2x"></i><span>{% post_to_facebook object_or_url "Facebook" %}</span></div></a>
+
+      </div>
+        <br />
+       
+{% else %}
+<p>invalid ID</p>
+{% endif %}
+    </div>
+        <br />
+</ul>
+<!--comments-->
+ 
+<!-- nav bar -->
+<div class ="display">
+    <h4 style="color: white;">{{ comments.count }} comments</h4>
+        </div>
+    {% for comment in comments %}
+    
+          <div class="comments" style="padding: 10px;">
+            <p class="font-weight-bold">
+              <h4 style="color:aqua;">{{comment.name }}</h4>
+            
+            
+            <h5 style="color: white;">{{ comment.body | linebreaks }}</h5> 
+              <span class=" text-muted font-weight-normal">
+                
+                <h6 style="color: white;">{{ comment.created_on }}</h6>
+              </span>
+            </p>
+            <hr/>
+          </div>
+          {% endfor %}
+      </hr>
+    <div class="card-body">
+          {% if new_comment %}
+          <div class="alert alert-success" role="alert">
+            Your comment is awaiting moderation
+          </div>
+          {% else %}
+          <h3>Leave a comment</h3>
+         # {% load crispy_forms_tags %}
+          <form method="post" style="margin-top: 1.3em;">
+              {{ comment_form | crispy }}
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+          </form>
+          {% endif %}
+    </div>
+    
+ 
+<!-- For Comments - This code will show the NUMBER OF COMMENTS POSTED.  -->
+    
+</body>
+<div class="topnav2">
+    <a class="active2" href="About/">About</a>
+    <a href="/">Terms of service</a>
+    <a href="/">privacy</a>
+  </div>
+    </footer>
+    </head>
+
+</html> 
+    

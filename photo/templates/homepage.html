@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      {% load hitcount_tags %}
+      {% load static %}
+        <title>Shobie</title>
+        
+         <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bsootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+<div class="navbar">
+    <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="{% url 'album' %}"><i class="fa fa-headphones"></i> Albums</a>
+    <a class="/" href="{% url 'posts' %}"><i class="fa fa-cart-arrow-down"></i> Blog today</a>
+  </div>
+  <div class="navbar">
+    <a href="{% url 'Biography' %}"><i class="fa fa-diamond"></i> Photo gallery</a>
+  </div>
+  </div>
+<section id="Post"></section><br/>
+    </section>
+<div class="jumbo">
+<nav>
+<ul>
+   
+   <!-- <li> <a href="hiphop"><button class ="btn btn-primary" type ="button" name="button">Hip Hop</button></a></li>
+   <li><a href="afrobeats"><button class ="btn btn-success" type ="button" name="button">Africa Rythm</button></a></li>-->
+</ul>
+</nav>
+</div>
+<style>
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+  
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: palevioletred;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+       *{
+           box-sizing: border-box;
+
+       }
+    body {
+        background-image: url("{% static '/images/record.webp' %}" );
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+        
+        }
+    .topnav{
+    background-color:aliceblue;
+    overflow:hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width:100%;
+    }
+    .topnav a{
+        float:left;
+        color:#f2f2f2;
+        text-align:center;
+        padding:14px 16px;
+        text-decoration:none;
+        font-size:12px;
+        }
+        .topnav a:hover{
+          background-color:#ddd;
+          color:black;
+        }
+        
+        .topnav a.active{
+         background-color:gray;
+         color:white; }
+        nav ul li{
+         font-size:11px;
+        
+        }  
+        nav a{
+          width: 120px;
+          display: block;
+          text-decoration: none;
+          text-align: center;
+          font-size: 11px;
+          color:white;
+          padding: 20px 10px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .container1 {
+            margin-top: 2px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .gallery{
+        margin: 110px;
+        border: 1px solid burlywood;
+        margin-left: 25px;
+        width: 140px;
+        height: 200px;
+    }     
+</style>
+
+</head>
+
+<body>
+        
+<div class="container-fluid">
+  <div class="container1">
+  <ul>
+          {% csrf_token %} 
+<!-- COMMENTS  -->
+{% for post in downld %}
+<div class="gallery">
+<h4 style="color:blue;font-size:14px;">{{post.Artist}}</h4>
+<h5 style="color:white;font-size:14px;">{{post.title}}</h5>
+<a href="player/{{post.id}}"><img src="{{post.image.url}}"></a>
+<a href="player/{{post.id}}"><button class ="btn btn-primary" type ="button" name="button"><h5>Play</h5></button></a>
+<!--<h4 class="mt-5"><a href='{% url "download" post.slug %}'>{{post.title}}</a>download</h4>-->
+<a href="{% url 'download' post.slug %}"><button class ="btn btn-danger" type ="button" name="button">download</button></a>
+<!--<a href="download"><button class ="btn btn-danger" type ="button" name="button">download</button></a> -->
+<p style="color:white">downloads: {% get_hit_count for post %}</p>
+</div>
+{% endfor %}
+
+</ul>
+</div>
+</div> 
+</body>
+<footer id="page_footer">
+    <p>&copy; 2022 Shobie's World</p>
+        <nav>
+        <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Terms of Service</a></li>
+            <li><a href="/">Privacy</a></li>
+        </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

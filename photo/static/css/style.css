@@ -1,0 +1,240 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+ background-color: black;
+}  
+h2{color: white;
+
+}
+h3{color:aqua;
+ margin-left: 5%;
+ font-style:italic;
+ font-weight: 200;
+} 
+nav{
+    background-color:ghostwhite;
+    width:100%;
+    overflow: auto;
+}
+
+ul{
+     margin: 0;
+     padding:0;
+     list-style:none;
+ }   
+li{
+float: left;
+}
+.container1 {
+    
+    padding-top: 80px;
+    margin: 25px;;
+    overflow: auto;
+}
+.gallery{
+    margin:25px;
+    border: 1px solid burlywood;
+    margin-left: 15%;
+    width: 170px;
+    height: 250px; 
+}   
+.gallery img{
+    width: 100%;
+    height: 60%;
+    border-radius: 50px; 
+}
+.gallery a{color: white;
+font-size:11px;}
+.desc{
+padding: 15px;
+text-align: center;
+}   
+
+nav a{
+width: 90px;
+display: block;
+text-decoration: none;
+text-align: center;
+font-size: 11px;
+color: black;
+padding: 20px 10px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+nav a:hover{
+  background-color: blue;
+  color:white;
+}
+.navgr .container{
+width: 100%;}
+
+.navgrd nav{background-color: green;
+width: 30%;
+height: 90%;
+float: right;}
+.sidenav a:hover {
+color:black;
+}
+.navgr image{width: 120%;
+height: 60%;}
+
+.sidenav {padding-top: 15px;
+background-color: white;}
+.sidenav a {font-size: 18px;}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 15px;
+color: white;
+display: block;
+transition: 0.3s;
+background-color: tomato;
+}
+.sidenav2 a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 15px;
+color: white;
+display: block;
+transition: 0.3s;
+background-color:gray;
+}
+.jumbotron{padding-top: 20;
+padding-bottom: 50;
+background-color: red;
+color: white;
+}
+
+    
+   
+    nav a:hover{
+          background-color: blue;
+          color:white;
+      }
+    
+    .container {
+     max-width: 250px;
+    
+     top: 50;
+     margin-left:auto;
+     overflow: auto;
+    
+    }
+    .container h5{
+     color: burlywood;
+     margin-left: auto;
+    }
+    .container h4{
+     color:blue;
+    }
+    
+    .container1 nav{
+     height: 100px;
+    
+     color:red;
+    }
+    .container1 a{
+     color:black;
+     font-size: 12px;
+    }
+   
+    
+    .gallery img{
+     width: 100%;
+     height: 60%;
+    }
+    .desc{
+     padding: 15px;
+     text-align: center;
+    }
+    .jumbotron{padding-top: 20;
+    padding-bottom: 50;
+    background-color: red;
+    color: whitesmoke;
+    }
+    .jumbotron
+    {   
+    padding-top: 0px;
+    padding-bottom:0px;
+    
+    background-size: cover;
+    height:50px;
+    }
+    
+    
+    .snav {
+    height: 180%;
+    width: 0;
+    position: absolute;
+    z-index: auto;
+    top: 50;
+    right: 0;
+    color: white;
+    
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    }
+    .snav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 11px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    height: 90%;
+    }
+    .snav a:hover {
+    color: #f1f1f1;
+    }
+    .snav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    
+    }
+    
+    .snav nav{background-color: cadetblue;
+    margin: 2px;
+    border-color: cornflowerblue;
+    height: 290;
+    
+    }
+    .snav img{
+     width: 100%;
+     height:20%;
+    }
+    .snav1{margin-left: 55%;}
+    
+    footer#page_footer{
+    clear: both;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: whitesmoke;
+    color: red;
+    font-size:11px;
+    
+    }
+    .jumbo{padding-top: 40px;
+    
+    }
+    .jumbo nav{background-color:gray;
+    
+    }
+    .jumbo a{
+     font-size: 11px;
+    }
+    .pagination{
+     color:white
+    }
+    
+    These
+    body{background-color: rgb(108, 172, 23);}
+    tr:nth-child(even)
+    {background-color: blueviolet;}
+   

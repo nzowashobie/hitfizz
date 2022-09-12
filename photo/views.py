@@ -1,7 +1,7 @@
 from audioop import reverse
 from email.mime import audio
 from multiprocessing import context
-from turtle import title
+#from turtle import title
 from urllib.request import Request
 from django.views.generic import ListView, DetailView
 

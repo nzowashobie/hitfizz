@@ -12,9 +12,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 import cloudinary
+cloudinary.config(
+  cloud_name = "shobie",
+  api_key = "758162452528722",
+  api_secret = "Xe6Puzh9__RGAT8UUr_KR8vn1_0",
+  api_proxy ="http://proxy.server:3128"
+)
 import cloudinary.uploader
 import cloudinary.api
-import dj_database_url
+#import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -106,55 +112,13 @@ WSGI_APPLICATION = 'NinjaApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-    #'default': {
-       # 'ENGINE': 'django.db.backends.sqlite3',
-       # 'NAME': BASE_DIR / 'db.sqlite3',
-   # }
-#}
-#postgresl
 DATABASES = {
-
-    #'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'NAME': 'shobie',
-       # 'USER': 'postgres',
-        #'PASSWORD': 'Kihonda1628',
-        #'Host' : 'Localhost',
-       #  }
-#}
-
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dalcas9g2fbrq7',
-        'USER': 'dgnpelaibjwitq',
-        'PASSWORD': '70f8cdada79ac8cd1a853b5403c8f34acbc00a2a0a3464aa09c1de6ba6a904b7',
-        'Host' : 'ec2-34-231-221-151.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':os.path.join( BASE_DIR, 'db.sqlite3'),
     }
 }
 
-   # 'default': {
-      #  'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       # 'NAME': 'd9sd54vogh6bj2',
-       # 'USER': 'jsenlpmrihfsaw',
-       # 'PASSWORD': 'f4fd113526d136943c055d39d2592fa13ff84baedbfe33d73d72134371c4c7c5',
-       # 'Host' : 'ec2-3-225-110-188.compute-1.amazonaws.com',
-      #  'PORT': '5432',
-  #  }
-#}
-
-    #'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       # 'NAME': 'shobie',
-       # 'USER': 'postgres',
-       # 'PASSWORD': 'Kihonda1628',
-       # 'Host' : 'Localhost',
-        # }
-#}
-
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -189,11 +153,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-cloudinary.config( 
-  cloud_name = "shobie", 
-  api_key = "758162452528722", 
-  api_secret = "Xe6Puzh9__RGAT8UUr_KR8vn1_0" 
-)
 
 COMMENTS_XTD_CONFIRM_EMAIL = False
 
